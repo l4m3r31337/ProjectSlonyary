@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация - вакансии</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <main class="main-page">
+        <img src="{% static 'main/svg/auth-main.svg' %}" width="702" height="705" alt="Авторизация">
+        <form class="auth-form" method="POST">
+            {% csrf_token %}
+            <h1 class="auth-title">Авторизация</h1>
+            <div class="inputs">
+                <div class="acc-type">
+                    <div>
+                        <input type="radio" name="role" value="editor" class="editor-button radio-button">
+                        <label>Редактор</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="role" value="intern" class="trainee-button radio-button" checked/>
+                        <label>Стажёр</label>
+                    </div>
+                </div>
+                <h2>Войти</h2>
+                <input type="email" placeholder="Введите почту" name="login" class="email-field" required>
+                <input type="password" placeholder="Введите пароль" name="password" class="password-field" required>
+                <input type="submit" value="Войти" name="submit" class="submit-button">
+                <a class="to-reg" href="/reg.html">Регистрация</a>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

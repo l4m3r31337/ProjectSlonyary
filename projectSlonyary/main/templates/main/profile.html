@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - вакансии</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <header class="page-header">
+        <nav class="main-navigation">
+            <ul class="main-nav-list">
+                <li class="main-nav-list-item">
+                    <a class="drafts-link nav-link" href="/drafts.html">Мои шаблоны</a>
+                </li>
+                <li class="main-nav-list-item">
+                    <a class="news-link nav-link" href="/index.html">Главная</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-div">
+            <img class="profile-img" src="{% static 'main/svg/profile.svg' %}" width="16pz">
+            <a class="profile-link" href="/profile.html">Профиль</a>
+        </div>
+    </header>
+    <main class="page-main">
+    <section class="profile-data">
+        <img src="{% static 'main/svg/profile-pic.svg' %}" width="104px" height="104px">
+        <form method="post">
+            {% csrf_token %}
+            <label>Имя</label>
+            <input type="text"
+                   name="firstname"
+                   value="{{ firstname|default_if_none:'' }}"
+                   placeholder="Введите имя">
+
+            <label>Фамилия</label>
+            <input type="text"
+                   name="lastname"
+                   value="{{ lastname|default_if_none:'' }}"
+                   placeholder="Введите фамилию">
+
+            <label>Почта</label>
+            <input type="email" value="{{ email }}" name="email" readonly>
+
+            <label>Роль</label>
+            <p class="user-role">{{ user_role }}</p>
+
+            <div class="profile-fake-footer">
+                <button class="button-save" type="submit">Сохранить</button>
+                <a href="#" class="password-change-link">Сменить пароль</a>
+                <a href="{% url 'logout' %}" class="password-change-link">Выйти</a>
+            </div>
+        </form>
+    </section>
+    </main>
+
+    <footer class="page-footer">
+        <ul class="footer-nav">
+            <li class="foooter-nav-item">
+                <a class="footer-link" href="#">Поддержка</a>
+            </li>
+            <li class="foooter-nav-item">
+                <a class="footer-link" href="#">Помощь</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

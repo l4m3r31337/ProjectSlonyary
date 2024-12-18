@@ -1,0 +1,703 @@
+/*
+@font-face {
+    font-family: 'Gotham Pro Regular';
+    src: url('main/fonts/GothamPro.eot');
+    src: url('main/fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+    url('main/fonts/GothamPro.woff') format('woff'),
+    url('../fonts/GothamPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+@font-face {
+    font-family: 'Gotham Pro Regular';
+    src: url('../fonts/GothamPro.ttf') format('truetype'),
+    url('main/fonts/GothamPro.ttf') format('truetype'),
+    url('../fonts/GothamPro.woff') format('woff'),
+    url('main/fonts/GothamPro.woff') format('woff'),
+    url('../fonts/GothamPro.eot') format('embedded-opentype'),
+    url('main/fonts/GothamPro.eot') format('embedded-opentype'),
+    
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 1440px;
+    margin: 0 auto;
+    font-family: 'Gotham Pro Regular';
+    justify-content: center;
+}
+
+button, a, input, textarea {
+    font-family: 'Gotham Pro Regular';   
+}
+
+.main-page {
+    display: flex;
+    gap: 50px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 64px;
+    color: #02542D;
+    font-weight: 700;
+    margin-left: 27px;
+    margin-bottom: 58px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.inputs {
+    width: 552px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background:  #9ec49b;
+    border-radius: 56px;
+    align-items: center;
+}
+
+.email-field, .password-field {
+    width: 409px;
+    margin: 15px;
+    font-size: 32px;
+    height: 65px;
+    font-weight: 600;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 68px;
+    padding-left: 28px;
+    background-color: #D9D9D9;
+
+}
+
+.acc-type {
+    margin:47px;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #02542D;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #02542D;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #02542D;
+}
+
+a {
+    display: block;
+    color:#045B4A
+}
+
+.to-reg{
+    margin-bottom: 120px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 39px;
+}
+
+.submit-button {
+    color: #02542D;
+    width: 158px;
+    height: 60px;
+    border-radius: 100px;
+    border: 0;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.reg-submit-button {
+    width: 293px;
+    margin-bottom: 25px;
+}
+
+.page-header {
+    width: inherit;
+    box-sizing: border-box;
+    height: 59px;
+    background-color:#EDF7EE;
+    margin: 0;
+    padding: 0 150px;
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-nav-list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    display: block;
+    color: #000;
+}
+
+.profile-div {
+    margin-top: 8px;
+    display: grid;
+    width: 118px;
+    height: 42px;
+    grid-template-columns: 16px 1fr;
+    gap: 10px;
+    padding: 0 10px;
+    background-color: #CFF7D3;
+    border-radius: 8px;
+}
+
+.profile-link {
+    align-self: center;
+    display: block;
+    text-decoration: none;
+}
+
+.profile-img {
+    align-self: center;
+}
+
+.page-main {
+    width: 1440px;
+}
+
+.drafts {
+    height: 503px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+    column-gap: 33px ;
+    padding: 80px;
+    align-items: center;
+}
+
+.promo {
+    font-size: 36px;
+    width: 691px;
+    height: 300px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 46px;
+    background-image: url('../svg/ovals.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.promo p {
+    padding: 32px 49px 39px 53px;
+}
+
+.create-drafts {
+    width: 179px;
+    height: 70px;
+    background-color: #009951;
+    border: none;
+    border-radius: 100px;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.second {
+    display: flex;
+    justify-content: space-around;
+}
+
+.second p {
+    font-style: italic;
+    font-size: 30px;
+    font-weight: 600;
+    width: 568px;
+    padding: 40px;
+    text-align: center;
+    margin: 0;
+    margin-top: 86px;
+}
+
+.buttons-list {
+    margin-top: 120px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.drafts-button, .profile-button, .cards-button {
+    border-radius: 100px;
+    border: none;
+    width: 250px;
+    height: 50px;
+    margin-right: 100px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.page-footer {
+    width: 1430px;
+    padding: 15px 52px;
+    margin: 0;
+    background-color: #98E1BF;
+    box-sizing: border-box;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-link {
+    color: #000;
+    font-weight: 600;
+}
+
+.cards, .interships-list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 166px;
+    justify-content: center;
+    margin-top: 104px;
+    margin-bottom: 298px;
+}
+
+
+.cards li, .intership {
+    width: 272px;
+    height: 303px;
+    box-shadow: 0 0 2px 2px lightgrey;
+}
+
+
+.card-main, .intership-main {
+    height: 189px;
+    background-color: #F5F6F5;
+    text-align: center;
+}
+
+.card-footer, .intership-footer {
+    height: 114px;
+    background-color: #B9D8BC;
+    justify-content: center;
+    display: flex;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    padding-top: 13px;
+    font-size: 16px;
+}
+
+.create-button, .edit-button, .more-button {
+    border: none;
+    height: 35px;
+    margin-top: 22px;
+    border-radius: 100px;
+    font-weight: 600;
+    background-color: #fff;
+}
+
+.projects, .inteships {
+    height: 835px;
+}
+
+.projects-header, .interships-header, .intership-header{
+    font-size: 32px;
+    text-align: center;
+    margin-top: 72px;
+}
+
+.profile-data {
+    width: 418px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 147px;
+}
+
+.profile-data input, .profile-data p {
+    margin-bottom: 17px;
+}
+
+.profile-data input {
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 418px;
+}
+
+.profile-data label {
+    margin-bottom: 36px;
+    align-self: baseline;
+}
+
+.profile-data img {
+    margin-bottom: 67px;
+    margin-top: 61px;
+}
+
+.profile-fake-footer{
+    width: inherit;
+    margin-top: 76px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.password-change-link {
+    color: #000;
+    font-size: 20;
+    font-weight: 600;
+    margin-right: -120px;
+    display: block;
+}
+
+.button-save {
+    border: none;
+    background-color: #CFF7D3;
+    width: 148px;
+    height: 43px;
+    border-radius: 100px;
+    font-weight: 600;
+}
+
+.builder-form {
+    display: flex;
+    width: 1200px;
+    flex-wrap: wrap;
+    gap: 75px;
+    justify-content: space-around;
+    margin: 60px
+}
+
+.name {
+    width: 297px;
+    height: 43px;
+    align-self: center;
+    text-align: center;
+    font-size: 20px;
+    border: 0;
+    border-bottom: 2px solid;
+}
+
+.description {
+    width: 564px;
+    height: 173px;
+    background-color: #F2F2F2;
+    border-radius: 97px;
+    border: 0;
+    box-shadow: 0px 5px 10px #C4C4C4;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+
+.imselect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.info {
+    display: grid;
+    width: 681px;
+    height: 356px;
+    
+    grid-template-columns: 230px 200px 200px;
+    grid-template-rows: 114px 94px 148px;
+    grid-template-areas: "h3-1 startdate enddate"
+                         "h3-2 adress adress"
+                          "h3-3 contact contact";
+    border-radius: 38px;
+    background-color: #E0F6EC;
+    padding: 33px;
+    box-sizing: border-box;
+}
+
+h4 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.h3-1 {
+    text-align: center;
+    margin: 0;
+    margin-top: 25px;
+    font-size: 24px;
+    grid-area: h3-1;
+    margin-left: -130px;
+}
+
+.h3-2 {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+    grid-area: h3-2;
+    margin-left: -45px;
+}
+
+.h3-3 {
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    grid-area: h3-3;
+    width: 180px;
+    margin-left: 10px;
+}
+
+.start-date {
+    grid-area: startdate;
+}
+
+.end-date {
+    grid-area: enddate;
+}
+
+.start-date input, .end-date input {
+    width: 146px;
+    height: 44px;
+    text-align: center;
+    font-size: 20px;
+    border: 0;
+    color: #646464; 
+    background-color: #D9D9D9;
+    border-radius: 200px;
+}
+
+.adress {
+    grid-area: adress;
+    width: 241px;
+    height: 43px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    border: 0;
+    color: #646464; 
+    background-color: #D9D9D9;
+    border-radius: 200px;
+}
+
+.contact {
+    grid-area: contact;
+    width: 259px;
+    height: 45px;
+    margin-top: 13px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    border: 0;
+    color: #646464; 
+    background-color: #D9D9D9;
+    border-radius: 200px;
+}
+
+.additional {
+    width: 1155px;
+    height: 294px;
+    background-color: #D9D9D9;
+    color: #646464;
+    border: 0;
+    padding: 34px 78px;
+    box-sizing: border-box;
+    align-self: center;
+    font-size: 20px;
+}
+
+.create-button-submit, .sign-up-button {
+    margin-right: auto;
+    box-sizing: border-box;
+    width: 227px;
+    height: 95px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #FFF;
+    border: 30px solid #B9D8BC;
+    border-radius: 100px;
+    box-shadow: 0px 5px 10px #C4C4C4;
+}
+
+.builder h2 {
+    margin-top: 55px;
+    margin-left: 40px;
+}
+
+.show-cards {
+    width: 321px;
+    height: 70px;
+    background-color: #009951;
+    border: none;
+    border-radius: 100px;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.second div {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-button {
+    margin-left: 70px;
+    margin-bottom: 88px;
+}
+
+.interships-list {
+    justify-content: left;
+}
+
+.available-interships-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.available-interships-list li {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 325px;
+    margin-bottom: 100px;
+    
+}
+
+.intership-name {
+    margin-right: 185px;
+}
+
+.intership-info {
+    width: 710px;
+    height: 325px;
+    border-radius: 136px;
+    box-sizing: border-box;
+    padding: 50px;
+    padding-top: 10px;
+    box-shadow: 0px 5px 10px #C4C4C4;
+}
+
+.sign-up-button {
+    margin-top: 86px;
+    width: 242px;
+    height: 112px;
+    margin-right: 185px;
+}
+
+.intership-sign-up h3 {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 24px;
+    text-align: left;
+    margin-top: 50px;
+    grid-area: h3;
+}
+
+.intership-sign-up {
+    padding: 0 100px;
+    display: grid;
+    grid-template-columns: 566px 372px;
+    grid-template-areas: "h3 ."
+                         "inter btn";
+    column-gap: 210px;
+    row-gap: 15px;
+
+}
+
+.test-button {
+    font-size: 24px;
+    grid-area: btn;
+    width: 372px;
+    height: 127px;
+    align-self: center;
+    border: 0;
+    font-weight: 600;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px #C4C4C4;
+    border-radius: 100px;
+
+}
+
+.chosen-intership {
+    margin-top: 10px;
+    width: 566px;
+    height: 313px;
+    border-radius: 91px;
+    box-shadow: 0px 5px 10px #C4C4C4;
+    grid-area: inter;
+
+    padding: 20px; /* Добавляем внутренний отступ для текста */
+    overflow: hidden; /* Скрывает части текста, выходящие за пределы блока */
+    text-overflow: ellipsis; /* Добавляет многоточие, если текст выходит за пределы */
+    word-wrap: break-word; /* Переносит длинные слова */
+    white-space: normal; /* Позволяет переносу строк */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+
+.page-footer-iter{ 
+    position: absolute;
+    bottom: 0;
+}
+

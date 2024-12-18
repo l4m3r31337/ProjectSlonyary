@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор - вакансии</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <header class="page-header">
+        <nav class="main-navigation">
+            <ul class="main-nav-list">
+                <li class="main-nav-list-item">
+                    <a class="drafts-link nav-link" href="/cards.html">Мои стажировки</a>
+                </li>
+                <li class="main-nav-list-item">
+                    <a class="news-link nav-link" href="/index1.html">Главная</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-div">
+            <img class="profile-img" src="{% static 'main/svg/profile.svg' %}" width="16pz">
+            <a class="profile-link" href="/profile1.html">Профиль</a>
+        </div>
+    </header>
+    <main class="page-main">
+        <section class="builder">
+            <h2>Стажировка</h2>
+            <form class="builder-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" class="name" name="name" placeholder="" value="{{ internship.name }}" readonly>
+                <textarea class="description" name="description" placeholder="" readonly>{{ internship.description }}</textarea>
+                <div class="imselect">
+                    {% if internship.photo %}
+                        <img id="myimage" src="{{ internship.photo.url }}" width="424" height="381">
+                    {% endif %}
+                </div>
+                <div class="info">
+                    <h3 class="h3-1">Сроки</h3>
+                    <div class="start-date">
+                        <h4>Начало</h4>
+                        <input type="date" name="start-date" value="{{ internship.start_date|date:'Y-m-d' }}" readonly>
+                    </div>
+                    <div class="end-date">
+                        <h4>Окончание</h4>
+                        <input type="date" name="end-date" value="{{ internship.end_date|date:'Y-m-d' }}" readonly>
+                    </div>
+                    <h3 class="h3-2">Адрес, место</h3>
+                    <input class="adress" type="text" name="adress" value="{{ internship.address }}" readonly>
+                    <h3 class="h3-3">Контакты руководителя</h3>
+                    <input class="contact" type="text" name="contact" value="{{ internship.contact }}" readonly>
+                </div>
+                <textarea class="additional" name="additional" readonly>{{ internship.additional_info }}</textarea>
+            </form>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <ul class="footer-nav">
+            <li class="foooter-nav-item">
+                <a class="footer-link" href="#">Поддержка</a>
+            </li>
+            <li class="foooter-nav-item">
+                <a class="footer-link" href="#">Помощь</a>
+            </li>
+        </ul>
+    </footer>
+    <script>
+        function onFileSelected(event) {
+            var selectedFile = event.target.files[0];
+            var reader = new FileReader();
+
+            var imgtag = document.getElementById("myimage");
+            imgtag.title = selectedFile.name;
+
+            reader.onload = function(event) {
+                imgtag.src = event.target.result;
+                };
+
+            reader.readAsDataURL(selectedFile);
+        }
+    </script>
+</body>
+</html>

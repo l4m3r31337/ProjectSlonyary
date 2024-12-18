@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - вакансии</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <header class="page-header">
+        <nav class="main-navigation">
+            <ul class="main-nav-list">
+                <li class="main-nav-list-item">
+                    <a class="drafts-link nav-link" href="/cards.html">Мои стажировки</a>
+                </li>
+                <li class="main-nav-list-item">
+                    <a class="news-link nav-link" href="/index1.html">Главная</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-div">
+            <img class="profile-img" src="{% static 'main/svg/profile.svg' %}" width="16pz">
+            <a class="profile-link" href="/profile1.html">Профиль</a>
+        </div>
+    </header>
+    <main class="page-main">
+        <section class="interships">
+            <h2 class="interships-header">Мои стажировки</h2>
+            <ul class="interships-list">
+                {% for internship in internships %}
+                <li class="intership">
+                    <div class="intership-main">
+                        <h3>{{ internship.name }}</h3>
+                    </div>
+                    <div class="intership-footer">
+                        <button class="more-button" onclick="window.location.href='{% url 'card' internship.id %}'">Подробнее</button>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% if internships|length == 0 %}
+            <p>Вы пока не записаны на стажировки.</p>
+            {% endif %}
+        </section>
+    </main>
+    <footer class="page-footer">
+        <ul class="footer-nav">
+            <li class="foooter-nav-item">
+                <a class="footer-link" href="#">Поддержка</a>
+            </li>
+            <li class="foooter-nav-item">
+                <a class="footer-link" href="#">Помощь</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
